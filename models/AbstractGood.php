@@ -1,12 +1,18 @@
 <?php
 
-
 namespace models;
 
 use services\Db;
 
-abstract class Model implements ModelInterface
+abstract class AbstractGood
 {
+    public $id;
+    public $name;
+    public $description;
+    public $price;
+    public $count;
+    public $cost;
+
     protected $db;
     protected $tableName;
 
@@ -19,7 +25,6 @@ abstract class Model implements ModelInterface
     public function getAll()
     {
         $sql = "SELECT * FROM {$this->tableName}";
-//        return (new Db()) -> queryAll($sql);
         return $this ->db -> queryAll($sql);
     }
 
@@ -29,5 +34,5 @@ abstract class Model implements ModelInterface
         return $this ->db -> queryOne($sql);
     }
 
-    abstract public function getTableName() : string;
+    abstract public function calculateCost();
 }
