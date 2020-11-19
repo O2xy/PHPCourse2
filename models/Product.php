@@ -1,16 +1,15 @@
 <?php
 
-namespace models;
+namespace app\models;
 
 //use services\Db;
 
 class Product extends Model
 {
-    public $id;
     public $name;
     public $description;
     public $price;
-    public $categoryId;
+    public $category_id;
 
     public function getTableName(): string
     {

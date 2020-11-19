@@ -1,13 +1,14 @@
 <?php
 
 
-namespace models;
+namespace app\models;
 
 
-class Users extends Model
+class User extends Model
 {
     public $name;
-    public $email;
+    public $login;
+    public $password;
 
     public function getTableName(): string
     {
